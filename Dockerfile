@@ -1,8 +1,7 @@
-FROM python:3.12-slim
+FROM node:22-bookworm-slim
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-ENV HOST=0.0.0.0 PORT=8000 PYTHONUNBUFFERED=1
-EXPOSE 8000
-CMD ["python", "app.py"]
+COPY package.json server.mjs worker.mjs ./
+COPY public ./public
+ENV NODE_ENV=production PORT=8080
+EXPOSE 8080
+CMD ["node","server.mjs"]

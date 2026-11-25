@@ -1,0 +1,1 @@
+{"name":"alfurat-mobile-railway","version":"3.0.0","private":true,"type":"module","engines":{"node":">=22.16.0"},"scripts":{"start":"node server.mjs"}}
